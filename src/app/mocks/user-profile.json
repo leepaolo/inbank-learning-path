@@ -1,0 +1,15 @@
+{
+  "id": "12345",
+  "nome": "Mario",
+  "cognome": "Rossi",
+  "email": "mario.rossi@example.com",
+  "telefono": "1234567890",
+  "indirizzo": {
+    "via": "Via Roma, 1",
+    "città": "Milano",
+    "CAP": "20100",
+    "paese": "Italia"
+  },
+  "dataNascita": "1980-01-01",
+  "codiceFiscale": "RSSMRA80A01H501Z"
+}
