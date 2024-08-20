@@ -1,5 +1,6 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, UpperCasePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { FormatDatePipe } from '../../shared/pipes/format-date.pipe';
 
 interface RecentActivity {
   date: string;
@@ -9,14 +10,14 @@ interface RecentActivity {
 @Component({
   selector: 'lee-recent-activity',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormatDatePipe, UpperCasePipe],
   template: `
     <div *ngIf="activities.length > 0">
       <br />
-      <h2>Attività Recente</h2>
+      <h2>{{ pageTitle | uppercase }}</h2>
       <ul>
         <li *ngFor="let activity of activities">
-          <strong>{{ activity.date }}</strong
+          <strong>{{ activity.date | formatDate : 'mediumDate' }}</strong
           >: {{ activity.description }}
         </li>
       </ul>
@@ -24,6 +25,7 @@ interface RecentActivity {
   `,
 })
 export class RecentActivityComponent implements OnInit {
+  pageTitle = 'Attività Recente';
   activities: RecentActivity[] = [];
 
   ngOnInit(): void {
