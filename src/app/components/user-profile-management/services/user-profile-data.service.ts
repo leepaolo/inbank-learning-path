@@ -1,7 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IProfiloUtente } from '../model/user-profile.interface';
+import {
+  IProfiloUtente,
+  IUserProfileResponse,
+} from '../model/user-profile.interface';
 import { API_BASE_URL } from '../../../../../api-config';
 
 @Injectable({
@@ -15,8 +18,8 @@ export class UserProfileDataService {
     private http: HttpClient
   ) {}
 
-  loadUserProfile(): Observable<IProfiloUtente> {
+  loadUserProfile(): Observable<IUserProfileResponse> {
     const url = `${this.baseUrl}/${this.USER_API}`;
-    return this.http.get<IProfiloUtente>(url);
+    return this.http.get<IUserProfileResponse>(url);
   }
 }
