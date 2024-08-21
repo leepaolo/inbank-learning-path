@@ -1,16 +1,23 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ContentChild,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { UserProfileDataService } from '../services/user-profile-data.service';
 import {
   IMessage,
   IProfiloUtente,
   IUserProfileResponse,
 } from '../model/user-profile.interface';
+import UserProfileDetailsComponent from './user-profile-details.component';
 
 @Component({
   selector: 'lee-user-profile',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, UserProfileDetailsComponent],
   template: `
     @if(profiloUtente) {
     <h1 class="text-2xl">Ciao {{ profiloUtente.nome }}</h1>
@@ -30,6 +37,21 @@ import {
       </div>
     </ng-template>
     <ng-content></ng-content>
+
+    <!-- Mostra dettagli utente-->
+    <lee-user-profile-details
+      [name]="profiloUtente.nome"
+      [email]="profiloUtente.email"
+      [codiceFiscale]="profiloUtente.codiceFiscale"
+    >
+    </lee-user-profile-details>
+
+    <div>
+      <p *ngIf="extraContent">
+        Contenuto Extra: {{ extraContent.nativeElement.textContent }}
+      </p>
+    </div>
+
     }
   `,
 })
@@ -37,6 +59,10 @@ export default class UserProfileComponent implements OnInit {
   esito!: number;
   profiloUtente!: IProfiloUtente;
   messageList: IMessage[] | undefined;
+
+  @ViewChild(UserProfileDetailsComponent)
+  userDetailComponent!: UserProfileDetailsComponent;
+  @ContentChild('customContent') extraContent!: ElementRef;
 
   constructor(private userProfileDataService: UserProfileDataService) {}
 
