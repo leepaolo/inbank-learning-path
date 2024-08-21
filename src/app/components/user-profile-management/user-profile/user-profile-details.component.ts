@@ -1,17 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { UpperCasePipe } from '@angular/common';
+import { HighlightDirective } from '../../../shared/directives/highlight.directive';
 
 @Component({
   selector: 'lee-user-profile-details',
   standalone: true,
-  imports: [CommonModule, UpperCasePipe],
+  imports: [CommonModule, UpperCasePipe, HighlightDirective],
   template: `
     <div>
       <br />
       <h2>{{ userDetails | uppercase }}</h2>
-      <p>Nome: <input #nameInput [value]="name" /></p>
-      <p>Email: <input #emailInput [value]="email" /></p>
+      <p>Nome: <input #nameInput [value]="name" leeHighlight /></p>
+      <p>Email: <input #emailInput [value]="email" leeHighlight /></p>
       <p>
         Codice Fiscale: <input #codiceFiscaleInput [value]="codiceFiscale" />
       </p>
