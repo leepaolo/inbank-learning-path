@@ -1,0 +1,43 @@
+{
+  "abilitazione3DSecure": true,
+  "esito": 1,
+  "mappaCartePrepagate": {
+    "carta1": {
+      "idCard": "card-12345",
+      "abi": "12345",
+      "abilitataDisposizioniWeb": true,
+      "circuito": "VISA",
+      "saldoDisponibile": {
+        "importo": 1200.0,
+        "divisa": "EUR"
+      },
+      "statoCartaPrepagata": "ATTIVA",
+      "tipo": "EVO"
+    },
+    "carta2": {
+      "idCard": "card-67890",
+      "abi": "67890",
+      "abilitataDisposizioniWeb": false,
+      "circuito": "MASTERCARD",
+      "saldoDisponibile": {
+        "importo": 500.0,
+        "divisa": "EUR"
+      },
+      "statoCartaPrepagata": "BLOCCATA",
+      "tipo": "BASIC"
+    },
+    "carta3": {
+      "idCard": "card-54321",
+      "abi": "54321",
+      "abilitataDisposizioniWeb": true,
+      "circuito": "AMEX",
+      "saldoDisponibile": {
+        "importo": 2000.0,
+        "divisa": "USD"
+      },
+      "statoCartaPrepagata": "ATTIVA",
+      "tipo": "PREMIUM"
+    }
+  },
+  "utenteSecondario": false
+}

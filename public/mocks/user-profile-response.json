@@ -1,20 +1,52 @@
 {
   "esito": 1,
-  "profiloUtente": {
-    "id": "12345",
-    "nome": "Mario",
-    "cognome": "Rossi",
-    "email": "mario.rossi@example.com",
-    "telefono": "1234567890",
-    "indirizzo": {
-      "via": "Via Roma, 1",
-      "città": "Milano",
-      "CAP": "20100",
-      "paese": "Italia"
+  "profiloUtente": [
+    {
+      "id": "12345",
+      "nome": "Mario",
+      "cognome": "Rossi",
+      "email": "mario.rossi@example.com",
+      "telefono": "1234567890",
+      "indirizzo": {
+        "via": "Via Roma, 1",
+        "città": "Milano",
+        "CAP": "20100",
+        "paese": "Italia"
+      },
+      "dataNascita": "1980-01-01",
+      "codiceFiscale": "RSSMRA80A01H501Z"
     },
-    "dataNascita": "1980-01-01",
-    "codiceFiscale": "RSSMRA80A01H501Z"
-  },
+    {
+      "id": "67890",
+      "nome": "Luigi",
+      "cognome": "Verdi",
+      "email": "luigi.verdi@example.com",
+      "telefono": "0987654321",
+      "indirizzo": {
+        "via": "Via Firenze, 10",
+        "città": "Roma",
+        "CAP": "00100",
+        "paese": "Italia"
+      },
+      "dataNascita": "1975-05-05",
+      "codiceFiscale": "VRDLGI75E05H501Z"
+    },
+    {
+      "id": "54321",
+      "nome": "Giovanni",
+      "cognome": "Bianchi",
+      "email": "giovanni.bianchi@example.com",
+      "telefono": "1122334455",
+      "indirizzo": {
+        "via": "Via Napoli, 20",
+        "città": "Torino",
+        "CAP": "10100",
+        "paese": "Italia"
+      },
+      "dataNascita": "1990-12-12",
+      "codiceFiscale": "BNCGNN90T12H501Z"
+    }
+  ],
   "messageList": [
     {
       "code": 0,

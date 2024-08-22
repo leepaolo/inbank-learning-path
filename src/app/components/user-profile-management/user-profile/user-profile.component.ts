@@ -64,15 +64,25 @@ export default class UserProfileComponent implements OnInit {
   userDetailComponent!: UserProfileDetailsComponent;
   @ContentChild('customContent') extraContent!: ElementRef;
 
-  constructor(private userProfileDataService: UserProfileDataService) {}
+  constructor(private userProfileService: UserProfileDataService) {}
 
   ngOnInit(): void {
-    this.userProfileDataService.loadUserProfile().subscribe({
+    this.userProfileService.loadUserProfile().subscribe({
       next: (data: IUserProfileResponse) => {
-        this.profiloUtente = data.profiloUtente;
-        this.esito = data.esito;
-        this.messageList = data.messageList;
-        console.log('Profilo utente caricato con successo', this.profiloUtente);
+        const profiloTrovato = data.profiloUtente.find(
+          (profilo: any) => profilo.id === '54321'
+        );
+        if (profiloTrovato) {
+          this.profiloUtente = profiloTrovato;
+          this.esito = data.esito;
+          this.messageList = data.messageList;
+          console.log(
+            'Profilo utente caricato con successo',
+            this.profiloUtente
+          );
+        } else {
+          console.error('Profilo utente non trovato');
+        }
       },
       error: (error: any) => {
         console.error('Errore nel caricamento del profilo utente', error);

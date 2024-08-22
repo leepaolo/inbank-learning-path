@@ -30,6 +30,6 @@ export interface IMessage {
 // Interface per la risposta complessiva
 export interface IUserProfileResponse {
   esito: number;
-  profiloUtente: IProfiloUtente;
+  profiloUtente: IProfiloUtente[];
   messageList: IMessage[];
 }
