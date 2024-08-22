@@ -4,6 +4,8 @@
   "mappaCartePrepagate": {
     "carta1": {
       "idCard": "card-12345",
+      "cardNumber": "374245455400126",
+      "expirationDate": "2027-12",
       "abi": "12345",
       "abilitataDisposizioniWeb": true,
       "circuito": "VISA",
@@ -16,6 +18,8 @@
     },
     "carta2": {
       "idCard": "card-67890",
+      "cardNumber": "554001263742309",
+      "expirationDate": "2028-11",
       "abi": "67890",
       "abilitataDisposizioniWeb": false,
       "circuito": "MASTERCARD",
@@ -28,6 +32,8 @@
     },
     "carta3": {
       "idCard": "card-54321",
+      "cardNumber": "374230955000003",
+      "expirationDate": "2029-05",
       "abi": "54321",
       "abilitataDisposizioniWeb": true,
       "circuito": "AMEX",

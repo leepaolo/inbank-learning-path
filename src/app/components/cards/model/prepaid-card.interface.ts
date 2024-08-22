@@ -1,5 +1,7 @@
 export interface IPrepaidCard {
   idCard: string;
+  cardNumber: string;
+  expirationDate: number;
   abi: string;
   abilitataDisposizioniWeb: boolean;
   circuito: string;
