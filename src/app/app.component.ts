@@ -8,6 +8,7 @@ import { UserProfileDataService } from './components/user-profile-management/ser
 import { RecentActivityComponent } from './components/recent-activity/recent-activity.component';
 import PrepaidCardListComponent from './components/cards/prepaid-card-list/prepaid-card-list.component';
 import { PrepaidCardsService } from './components/cards/services/prepaid-cards.service';
+import PrepaidCardFiltersComponent from './components/cards/prepaid-card-fiters/prepaid-card-filters.component';
 
 @Component({
   selector: 'lee-root',
@@ -17,6 +18,7 @@ import { PrepaidCardsService } from './components/cards/services/prepaid-cards.s
     UserProfileComponent,
     RecentActivityComponent,
     PrepaidCardListComponent,
+    PrepaidCardFiltersComponent,
   ],
   providers: [
     { provide: API_BASE_URL, useValue: environment.apiBaseUrl },
@@ -24,11 +26,17 @@ import { PrepaidCardsService } from './components/cards/services/prepaid-cards.s
     PrepaidCardsService,
   ],
   template: `
-    <lee-user-profile>
-      <lee-recent-activity></lee-recent-activity>
-      <router-outlet></router-outlet>
-    </lee-user-profile>
-    <lee-prepaid-card-list></lee-prepaid-card-list>
+    <div class="container mx-auto px-4">
+      <lee-user-profile>
+        <lee-recent-activity></lee-recent-activity>
+        <router-outlet></router-outlet>
+      </lee-user-profile>
+      <br />
+      <section class="grid grid-flow-col auto-cols-max gap-12">
+        <div><lee-prepaid-card-list></lee-prepaid-card-list></div>
+        <div><lee-prepaid-card-filters></lee-prepaid-card-filters></div>
+      </section>
+    </div>
   `,
 })
 export class AppComponent {}

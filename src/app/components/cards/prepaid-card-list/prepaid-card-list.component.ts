@@ -1,8 +1,8 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, UpperCasePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { PrepaidCardsService } from '../services/prepaid-cards.service';
 import { UserProfileDataService } from '../../user-profile-management/services/user-profile-data.service';
-import { UppercasePipe } from '../../../shared/pipes/uppercase.pipe';
+
 import {
   IPrepaidCard,
   IPrepaidCardsResponse,
@@ -12,12 +12,11 @@ import { BehaviorSubject, map } from 'rxjs';
 @Component({
   selector: 'lee-prepaid-card-list',
   standalone: true,
-  imports: [CommonModule, UppercasePipe],
+  imports: [CommonModule, UpperCasePipe],
   template: `
     <div>
-      <br />
       <div>
-        <h1>{{ cardPageTitle | uppercase }}</h1>
+        <h1>{{ pageTitle | uppercase }}</h1>
       </div>
       <br />
       <!-- CARD LIST -->
@@ -40,7 +39,7 @@ import { BehaviorSubject, map } from 'rxjs';
   `,
 })
 export default class PrepaidCardListComponent implements OnInit {
-  cardPageTitle = 'Gestione carte prepagate';
+  pageTitle = 'Gestione carte prepagate';
   cardDetails = 'Dettagli carte utente';
   prepaidCards: IPrepaidCard[] = [];
 
