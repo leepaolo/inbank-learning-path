@@ -1,0 +1,3 @@
+export const CARD_STATUS_TUTTE = 'TUTTE';
+export const CARD_STATUS_ACTIVE = 'ATTIVA';
+export const CARD_STATUS_BLOCKED = 'BLOCCATA';

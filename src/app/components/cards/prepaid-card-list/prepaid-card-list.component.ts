@@ -1,8 +1,8 @@
-import { CommonModule, UpperCasePipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { PrepaidCardsService } from '../services/prepaid-cards.service';
 import { UserProfileDataService } from '../../user-profile-management/services/user-profile-data.service';
-
+import { UppercasePipe } from '../../../shared/pipes/uppercase.pipe';
 import {
   IPrepaidCard,
   IPrepaidCardsResponse,
@@ -12,7 +12,7 @@ import { BehaviorSubject, map } from 'rxjs';
 @Component({
   selector: 'lee-prepaid-card-list',
   standalone: true,
-  imports: [CommonModule, UpperCasePipe],
+  imports: [CommonModule, UppercasePipe],
   template: `
     <div>
       <div>
